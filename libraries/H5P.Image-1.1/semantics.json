@@ -1,0 +1,17 @@
+[
+    {
+        "name": "file",
+        "type": "image",
+        "label": "Image",
+        "importance": "high",
+        "disableCopyright": true
+    },
+    {
+        "name": "contentName",
+        "type": "text",
+        "label": "Image content name",
+        "importance": "low",
+        "common": true,
+        "default": "Image"
+    }
+]

@@ -1,0 +1,308 @@
+[
+    {
+        "name": "media",
+        "type": "group",
+        "label": "Media",
+        "importance": "medium",
+        "fields": [
+            {
+                "name": "type",
+                "type": "library",
+                "label": "Type",
+                "importance": "medium",
+                "options": ["H5P.Image 1.1", "H5P.Video 1.5"],
+                "optional": true,
+                "description": "Optional media to display above the question."
+            },
+            {
+                "name": "disableImageZooming",
+                "type": "boolean",
+                "label": "Disable image zooming",
+                "importance": "low",
+                "default": false,
+                "optional": true,
+                "widget": "showWhen",
+                "showWhen": {
+                    "rules": [
+                        {
+                            "field": "type",
+                            "equals": "H5P.Image 1.1"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "name": "question",
+        "type": "text",
+        "importance": "medium",
+        "widget": "html",
+        "label": "Question",
+        "enterMode": "p",
+        "tags": ["strong", "em", "sub", "sup", "h2", "h3", "pre", "code"]
+    },
+    {
+        "name": "answers",
+        "type": "list",
+        "importance": "high",
+        "label": "Available options",
+        "entity": "option",
+        "min": 1,
+        "defaultNum": 2,
+        "field": {
+            "name": "answer",
+            "type": "group",
+            "label": "Option",
+            "importance": "high",
+            "fields": [
+                {
+                    "name": "text",
+                    "type": "text",
+                    "importance": "medium",
+                    "widget": "html",
+                    "label": "Text",
+                    "tags": ["strong", "em", "sub", "sup", "code"]
+                },
+                {
+                    "name": "correct",
+                    "type": "boolean",
+                    "label": "Correct",
+                    "importance": "low"
+                }
+            ]
+        }
+    },
+
+    {
+        "name": "UI",
+        "type": "group",
+        "label": "User interface translations for multichoice",
+        "importance": "low",
+        "common": true,
+        "fields": [
+            {
+                "name": "checkAnswerButton",
+                "type": "text",
+                "label": "Check answer button label",
+                "importance": "low",
+                "default": "Check"
+            },
+            {
+                "name": "submitAnswerButton",
+                "type": "text",
+                "label": "Submit answer button label",
+                "importance": "low",
+                "default": "Submit"
+            },
+            {
+                "name": "showSolutionButton",
+                "type": "text",
+                "label": "Show solution button label",
+                "importance": "low",
+                "default": "Show solution"
+            },
+            {
+                "name": "tryAgainButton",
+                "type": "text",
+                "label": "Retry button label",
+                "importance": "low",
+                "default": "Retry",
+                "optional": true
+            },
+            {
+                "name": "tipsLabel",
+                "type": "text",
+                "label": "Tip label",
+                "importance": "low",
+                "default": "Show tip",
+                "optional": true
+            },
+            {
+                "name": "scoreBarLabel",
+                "type": "text",
+                "label": "Textual representation of the score bar for those using a readspeaker",
+                "description": "Available variables are :num and :total",
+                "importance": "low",
+                "default": "You got :num out of :total points",
+                "optional": true
+            },
+            {
+                "name": "tipAvailable",
+                "type": "text",
+                "label": "Tip Available (not displayed)",
+                "importance": "low",
+                "default": "Tip available",
+                "description": "Accessibility text used for readspeakers",
+                "optional": true
+            },
+            {
+                "name": "feedbackAvailable",
+                "type": "text",
+                "label": "Feedback Available (not displayed)",
+                "importance": "low",
+                "default": "Feedback available",
+                "description": "Accessibility text used for readspeakers",
+                "optional": true
+            },
+            {
+                "name": "readFeedback",
+                "type": "text",
+                "label": "Read Feedback (not displayed)",
+                "importance": "low",
+                "default": "Read feedback",
+                "description": "Accessibility text used for readspeakers",
+                "optional": true,
+                "deprecated": true
+            },
+            {
+                "name": "wrongAnswer",
+                "type": "text",
+                "label": "Wrong Answer (not displayed)",
+                "importance": "low",
+                "default": "Wrong answer",
+                "description": "Accessibility text used for readspeakers",
+                "optional": true,
+                "deprecated": true
+            },
+            {
+                "name": "correctAnswer",
+                "type": "text",
+                "label": "Correct Answer (not displayed)",
+                "importance": "low",
+                "default": "Correct answer",
+                "description": "Accessibility text used for readspeakers",
+                "optional": true
+            },
+            {
+                "name": "shouldCheck",
+                "type": "text",
+                "label": "Option should have been checked",
+                "importance": "low",
+                "default": "Should have been checked",
+                "optional": true
+            },
+            {
+                "name": "shouldNotCheck",
+                "type": "text",
+                "label": "Option should not have been checked",
+                "importance": "low",
+                "default": "Should not have been checked",
+                "optional": true
+            },
+            {
+                "label": "Text for \"Requires answer\" message",
+                "importance": "low",
+                "name": "noInput",
+                "type": "text",
+                "default": "Please answer before viewing the solution",
+                "optional": true
+            },
+            {
+                "name": "a11yCheck",
+                "type": "text",
+                "label": "Assistive technology description for \"Check\" button",
+                "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered.",
+                "importance": "low",
+                "common": true
+            },
+            {
+                "name": "a11yShowSolution",
+                "type": "text",
+                "label": "Assistive technology description for \"Show Solution\" button",
+                "default": "Show the solution. The task will be marked with its correct solution.",
+                "importance": "low",
+                "common": true
+            },
+            {
+                "name": "a11yRetry",
+                "type": "text",
+                "label": "Assistive technology description for \"Retry\" button",
+                "default": "Retry the task. Reset all responses and start the task over again.",
+                "importance": "low",
+                "common": true
+            }
+        ]
+    },
+
+    {
+        "label": "Check confirmation dialog",
+        "importance": "low",
+        "name": "confirmCheck",
+        "type": "group",
+        "common": true,
+        "fields": [
+            {
+                "label": "Header text",
+                "importance": "low",
+                "name": "header",
+                "type": "text",
+                "default": "Finish ?"
+            },
+            {
+                "label": "Body text",
+                "importance": "low",
+                "name": "body",
+                "type": "text",
+                "default": "Are you sure you wish to finish ?",
+                "widget": "html",
+                "enterMode": "p",
+                "tags": ["strong", "em", "del", "u", "code"]
+            },
+            {
+                "label": "Cancel button label",
+                "importance": "low",
+                "name": "cancelLabel",
+                "type": "text",
+                "default": "Cancel"
+            },
+            {
+                "label": "Confirm button label",
+                "importance": "low",
+                "name": "confirmLabel",
+                "type": "text",
+                "default": "Finish"
+            }
+        ]
+    },
+    {
+        "label": "Retry confirmation dialog",
+        "importance": "low",
+        "name": "confirmRetry",
+        "type": "group",
+        "common": true,
+        "fields": [
+            {
+                "label": "Header text",
+                "importance": "low",
+                "name": "header",
+                "type": "text",
+                "default": "Retry ?"
+            },
+            {
+                "label": "Body text",
+                "importance": "low",
+                "name": "body",
+                "type": "text",
+                "default": "Are you sure you wish to retry ?",
+                "widget": "html",
+                "enterMode": "p",
+                "tags": ["strong", "em", "del", "u", "code"]
+            },
+            {
+                "label": "Cancel button label",
+                "importance": "low",
+                "name": "cancelLabel",
+                "type": "text",
+                "default": "Cancel"
+            },
+            {
+                "label": "Confirm button label",
+                "importance": "low",
+                "name": "confirmLabel",
+                "type": "text",
+                "default": "Confirm"
+            }
+        ]
+    }
+]

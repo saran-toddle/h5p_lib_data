@@ -1,0 +1,319 @@
+[
+    {
+        "name": "media",
+        "type": "group",
+        "label": "Media",
+        "importance": "medium",
+        "fields": [
+            {
+                "name": "type",
+                "type": "library",
+                "label": "Type",
+                "options": ["H5P.Image 1.1", "H5P.Video 1.5"],
+                "optional": true,
+                "description": "Optional media to display above the question."
+            },
+            {
+                "name": "disableImageZooming",
+                "type": "boolean",
+                "label": "Disable image zooming",
+                "importance": "low",
+                "default": false,
+                "optional": true,
+                "widget": "showWhen",
+                "showWhen": {
+                    "rules": [
+                        {
+                            "field": "type",
+                            "equals": "H5P.Image 1.1"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "label": "Task description",
+        "importance": "high",
+        "name": "text",
+        "type": "text",
+        "widget": "html",
+        "default": "Fill in the missing words",
+        "description": "A guide telling the user how to answer this task.",
+        "enterMode": "p",
+        "optional": true,
+        "tags": [
+            "strong",
+            "em",
+            "u",
+            "a",
+            "ul",
+            "ol",
+            "h2",
+            "h3",
+            "hr",
+            "pre",
+            "code"
+        ]
+    },
+    {
+        "name": "questions",
+        "type": "list",
+        "label": "Text blocks",
+        "importance": "high",
+        "entity": "text block",
+        "min": 1,
+        "max": 31,
+        "field": {
+            "name": "question",
+            "type": "text",
+            "widget": "html",
+            "label": "Line of text",
+            "importance": "high",
+            "placeholder": "Oslo is the capital of *Norway*.",
+            "description": "",
+            "important": {
+                "description": "<ul><li>Blanks are added with an asterisk (*) in front and behind the correct word/phrase.</li><li>Alternative answers are separated with a forward slash (/).</li><li>You may add a textual tip, using a colon (:) in front of the tip.</li></ul>",
+                "example": "H5P content may be edited using a *browser/web-browser:Something you use every day*."
+            },
+            "enterMode": "p",
+            "tags": ["strong", "em", "del", "u", "code"]
+        }
+    },
+    {
+        "label": "Text for \"Show solutions\" button",
+        "name": "showSolutions",
+        "type": "text",
+        "default": "Show solution",
+        "common": true
+    },
+    {
+        "label": "Text for \"Retry\" button",
+        "importance": "low",
+        "name": "tryAgain",
+        "type": "text",
+        "default": "Retry",
+        "common": true,
+        "optional": true
+    },
+    {
+        "label": "Text for \"Check\" button",
+        "importance": "low",
+        "name": "checkAnswer",
+        "type": "text",
+        "default": "Check",
+        "common": true,
+        "optional": true
+    },
+    {
+        "label": "Text for \"Submit\" button",
+        "importance": "low",
+        "name": "submitAnswer",
+        "type": "text",
+        "default": "Submit",
+        "common": true,
+        "optional": true
+    },
+    {
+        "label": "Text for \"Not filled out\" message",
+        "importance": "low",
+        "name": "notFilledOut",
+        "type": "text",
+        "default": "Please fill in all blanks to view solution",
+        "common": true,
+        "optional": true
+    },
+    {
+        "label": "Text for \"':ans' is correct\" message",
+        "importance": "low",
+        "name": "answerIsCorrect",
+        "type": "text",
+        "default": "':ans' is correct",
+        "common": true,
+        "optional": true
+    },
+    {
+        "label": "Text for \"':ans' is wrong\" message",
+        "importance": "low",
+        "name": "answerIsWrong",
+        "type": "text",
+        "default": "':ans' is wrong",
+        "common": true,
+        "optional": true
+    },
+    {
+        "label": "Text for \"Answered correctly\" message",
+        "importance": "low",
+        "name": "answeredCorrectly",
+        "type": "text",
+        "default": "Answered correctly",
+        "common": true,
+        "optional": true
+    },
+    {
+        "label": "Text for \"Answered incorrectly\" message",
+        "importance": "low",
+        "name": "answeredIncorrectly",
+        "type": "text",
+        "default": "Answered incorrectly",
+        "common": true,
+        "optional": true
+    },
+    {
+        "label": "Assistive technology label for solution",
+        "importance": "low",
+        "name": "solutionLabel",
+        "type": "text",
+        "default": "Correct answer:",
+        "common": true,
+        "optional": true
+    },
+    {
+        "label": "Assistive technology label for input field",
+        "importance": "low",
+        "name": "inputLabel",
+        "type": "text",
+        "description": "Use @num and @total to replace current cloze number and total cloze number",
+        "default": "Blank input @num of @total",
+        "common": true,
+        "optional": true
+    },
+    {
+        "label": "Assistive technology label for saying an input has a tip tied to it",
+        "importance": "low",
+        "name": "inputHasTipLabel",
+        "type": "text",
+        "default": "Tip available",
+        "common": true,
+        "optional": true
+    },
+    {
+        "label": "Tip icon label",
+        "importance": "low",
+        "name": "tipLabel",
+        "type": "text",
+        "default": "Tip",
+        "common": true,
+        "optional": true
+    },
+    {
+        "label": "Check confirmation dialog",
+        "importance": "low",
+        "name": "confirmCheck",
+        "type": "group",
+        "common": true,
+        "fields": [
+            {
+                "label": "Header text",
+                "importance": "low",
+                "name": "header",
+                "type": "text",
+                "default": "Finish ?"
+            },
+            {
+                "label": "Body text",
+                "importance": "low",
+                "name": "body",
+                "type": "text",
+                "default": "Are you sure you wish to finish ?",
+                "widget": "html",
+                "enterMode": "p",
+                "tags": ["strong", "em", "del", "u", "code"]
+            },
+            {
+                "label": "Cancel button label",
+                "importance": "low",
+                "name": "cancelLabel",
+                "type": "text",
+                "default": "Cancel"
+            },
+            {
+                "label": "Confirm button label",
+                "importance": "low",
+                "name": "confirmLabel",
+                "type": "text",
+                "default": "Finish"
+            }
+        ]
+    },
+    {
+        "label": "Retry confirmation dialog",
+        "importance": "low",
+        "name": "confirmRetry",
+        "type": "group",
+        "common": true,
+        "fields": [
+            {
+                "label": "Header text",
+                "importance": "low",
+                "name": "header",
+                "type": "text",
+                "default": "Retry ?"
+            },
+            {
+                "label": "Body text",
+                "importance": "low",
+                "name": "body",
+                "type": "text",
+                "default": "Are you sure you wish to retry ?",
+                "widget": "html",
+                "enterMode": "p",
+                "tags": ["strong", "em", "del", "u", "code"]
+            },
+            {
+                "label": "Cancel button label",
+                "importance": "low",
+                "name": "cancelLabel",
+                "type": "text",
+                "default": "Cancel"
+            },
+            {
+                "label": "Confirm button label",
+                "importance": "low",
+                "name": "confirmLabel",
+                "type": "text",
+                "default": "Confirm"
+            }
+        ]
+    },
+    {
+        "name": "scoreBarLabel",
+        "type": "text",
+        "label": "Textual representation of the score bar for those using a readspeaker",
+        "default": "You got :num out of :total points",
+        "importance": "low",
+        "common": true
+    },
+    {
+        "name": "a11yCheck",
+        "type": "text",
+        "label": "Assistive technology description for \"Check\" button",
+        "default": "Check the answers. The responses will be marked as correct, incorrect, or unanswered.",
+        "importance": "low",
+        "common": true
+    },
+    {
+        "name": "a11yShowSolution",
+        "type": "text",
+        "label": "Assistive technology description for \"Show Solution\" button",
+        "default": "Show the solution. The task will be marked with its correct solution.",
+        "importance": "low",
+        "common": true
+    },
+    {
+        "name": "a11yRetry",
+        "type": "text",
+        "label": "Assistive technology description for \"Retry\" button",
+        "default": "Retry the task. Reset all responses and start the task over again.",
+        "importance": "low",
+        "common": true
+    },
+    {
+        "name": "a11yCheckingModeHeader",
+        "type": "text",
+        "label": "Assistive technology description for starting task",
+        "default": "Checking mode",
+        "importance": "low",
+        "common": true
+    }
+]
